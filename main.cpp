@@ -213,5 +213,16 @@ int nod(int a, int b) {
     for(int i = 0; i < b; i++) {
         std:: cout << *(p_b + i) << " " ;
     }
+
+    int nod = 1;
+
+    for(int i = 0; p_a[i] != 0; i++) {
+        for(int j = 0; p_b[j] != 0; j++) {
+        
+            if(p_a[i] == p_b[j]) {
+                nod = p_a[i];
+            }
+        }
+    }
     return 0;
 }
