@@ -15,15 +15,16 @@ double mult_arr(double arr[], int num);
 int find_P(int a, int b);
 int find_S(int a, int b);
 int* find_del_count(int a);
+int nod(int a, int b);
+
 
 int main() {
 
-    double arr[] = {-6, 2, 4};
-    int b = 0;
-    double num = 3;
     int a = 20;
-    find_del_count(a);
-
+    int b = 10;
+   
+    nod(a, b);
+   
 }
 
 double add(double a, double b) {
@@ -186,14 +187,31 @@ int find_S(int a, int b) {
 int* find_del_count(int a) {
     int count = 0;
     int*  arr = (int*)malloc(100 * sizeof(a));
-    for(int i = 0; i  < a; i++) {//i=5
-        std::cout << i << std::endl;
+    for(int i = 1; i  <= a; i++) {//i=5
         if(a % i == 0) {
-            arr[count] = i;
+           arr[count] = i;
             count++;
         }
-        
     }
 
     return arr;
+}
+
+
+
+int nod(int a, int b) {
+    int* p_a = find_del_count(a);
+    int* p_b = find_del_count(b);
+
+    for(int i = 0; i < a; i++) {
+        std:: cout << *(p_a + i) << " ";
+
+    }
+
+    std:: cout << std::endl;
+
+    for(int i = 0; i < b; i++) {
+        std:: cout << *(p_b + i) << " " ;
+    }
+    return 0;
 }
